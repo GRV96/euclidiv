@@ -17,6 +17,18 @@ public class EuclidivTests {
 	}
 
 	@Test
+	public void exactDivisionTestPosRem() {
+		// 20 = 5 * 4 + 0
+		runDivTest(20, 5, false, 4, 0);
+	}
+
+	@Test
+	public void exactDivisionTestNegRem() {
+		// 20 = 5 * 4 - 0
+		runDivTest(20, 5, true, 4, 0);
+	}
+
+	@Test
 	public void posPosTestPosRem() {
 		// 20 = 7 * 2 + 6
 		runDivTest(20, 7, false, 2, 6);

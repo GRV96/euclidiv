@@ -69,10 +69,4 @@ public class EuclideanDivision {
 		}
 		quotient = (dividend - remainder) / divisor;
 	}
-
-	@Override
-	public String toString() {
-		return "" + dividend + "/" + divisor + "="
-				+ quotient + "r" + remainder;
-	}
 }
