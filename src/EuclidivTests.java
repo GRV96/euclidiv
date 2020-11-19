@@ -8,12 +8,35 @@ import org.junit.Test;
  */
 public class EuclidivTests {
 
-	private static void runDivTest(int dividend, int divisor, boolean allowNegRem,
-			int quotient, int remainder) throws AssertionError {
+	private static void runDivTest(int dividend, int divisor,
+			boolean allowNegRem, int quotient, int remainder)
+					throws AssertionError, IllegalArgumentException {
 		EuclideanDivision ed =
 				new EuclideanDivision(dividend, divisor, allowNegRem);
+		/*
+		 * EuclideanDivision.performDivision calculates the remainder
+		 * first then uses it to calculate the quotient. The remainder
+		 * must therefore be tested first.
+		 */
 		assertEquals(remainder, ed.getRemainder());
 		assertEquals(quotient, ed.getQuotient());
+	}
+
+	@Test
+	public void dividendZeroTestPosRem() {
+		// 0 = 7 * 0 + 0
+		runDivTest(0, 7, false, 0, 0);
+	}
+
+	@Test
+	public void dividendZeroTestNegRem() {
+		// 0 = 7 * 0 - 0
+		runDivTest(0, 7, true, 0, 0);
+	}
+
+	@Test(expected=IllegalArgumentException.class)
+	public void divisorZeroTest() {
+		runDivTest(20, 0, false, -1, -1);
 	}
 
 	@Test
@@ -74,15 +97,5 @@ public class EuclidivTests {
 	public void negNegTestNegRem() {
 		// -20 = -7 * 2 - 6
 		runDivTest(-20, -7, true, 2, -6);
-	}
-
-	@Test(expected=IllegalArgumentException.class)
-	public void zeroDividendTest() {
-		EuclideanDivision ed = new EuclideanDivision(0, 7, false);
-	}
-
-	@Test(expected=IllegalArgumentException.class)
-	public void zeroDivisorTest() {
-		EuclideanDivision ed = new EuclideanDivision(20, 0, false);
 	}
 }
