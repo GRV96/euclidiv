@@ -17,27 +17,51 @@ public class EuclidivTests {
 	}
 
 	@Test
-	public void posPosTest() {
+	public void posPosTestPosRem() {
 		// 20 = 7 * 2 + 6
 		runDivTest(20, 7, false, 2, 6);
 	}
 
 	@Test
-	public void posNegTest() {
+	public void posPosTestNegRem() {
+		// 20 = 7 * 2 + 6
+		runDivTest(20, 7, true, 2, 6);
+	}
+
+	@Test
+	public void posNegTestPosRem() {
 		// 20 = -7 * -2 + 6
 		runDivTest(20, -7, false, -2, 6);
 	}
 
 	@Test
-	public void negPosTest() {
+	public void posNegTestNegRem() {
+		// 20 = -7 * -2 + 6
+		runDivTest(20, -7, true, -2, 6);
+	}
+
+	@Test
+	public void negPosTestPosRem() {
 		// -20 = 7 * -3 + 1
 		runDivTest(-20, 7, false, -3, 1);
 	}
 
 	@Test
-	public void negNegTest() {
+	public void negPosTestNegRem() {
+		// -20 = 7 * -2 - 6
+		runDivTest(-20, 7, true, -2, -6);
+	}
+
+	@Test
+	public void negNegTestPosRem() {
 		// -20 = -7 * 3 + 1
 		runDivTest(-20, -7, false, 3, 1);
+	}
+
+	@Test
+	public void negNegTestNegRem() {
+		// -20 = -7 * 2 - 6
+		runDivTest(-20, -7, true, 2, -6);
 	}
 
 	@Test(expected=IllegalArgumentException.class)

@@ -34,25 +34,25 @@ public class EuclideanDivision {
 	}
 
 	/**
-	 * Accessor of this division's dividend
+	 * Accessor to this division's dividend
 	 * @return the dividend
 	 */
 	public int getDividend() {return dividend;}
 
 	/**
-	 * Accessor of this division's divisor
+	 * Accessor to this division's divisor
 	 * @return the divisor
 	 */
 	public int getDivisor() {return divisor;}
 
 	/**
-	 * Accessor of this division's quotient
+	 * Accessor to this division's quotient
 	 * @return the quotient
 	 */
 	public int getQuotient() {return quotient;}
 
 	/**
-	 * Accessor of this division's remainder
+	 * Accessor to this division's remainder
 	 * @return the remainder
 	 */
 	public int getRemainder() {return remainder;}
