@@ -12,32 +12,32 @@ public class EuclidivTests {
 	public void posPosTest() {
 		// 20 = 7 * 2 + 6
 		EuclideanDivision ed = new EuclideanDivision(20, 7);
-		assertEquals(2, ed.quotient);
-		assertEquals(6, ed.remainder);
+		assertEquals(2, ed.getQuotient());
+		assertEquals(6, ed.getRemainder());
 	}
 
 	@Test
 	public void posNegTest() {
 		// 20 = -7 * -2 + 6
 		EuclideanDivision ed = new EuclideanDivision(20, -7);
-		assertEquals(-2, ed.quotient);
-		assertEquals(6, ed.remainder);
+		assertEquals(-2, ed.getQuotient());
+		assertEquals(6, ed.getRemainder());
 	}
 
 	@Test
 	public void negPosTest() {
 		// -20 = 7 * -3 + 1
 		EuclideanDivision ed = new EuclideanDivision(-20, 7);
-		assertEquals(-3, ed.quotient);
-		assertEquals(1, ed.remainder);
+		assertEquals(1, ed.getRemainder());
+		assertEquals(-3, ed.getQuotient());
 	}
 
 	@Test
 	public void negNegTest() {
 		// -20 = -7 * 3 + 1
 		EuclideanDivision ed = new EuclideanDivision(-20, -7);
-		assertEquals(3, ed.quotient);
-		assertEquals(1, ed.remainder);
+		assertEquals(1, ed.getRemainder());
+		assertEquals(3, ed.getQuotient());
 	}
 
 	@Test(expected=IllegalArgumentException.class)
