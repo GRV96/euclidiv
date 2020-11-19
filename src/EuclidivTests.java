@@ -12,23 +12,22 @@ public class EuclidivTests {
 	public void posPosTest() {
 		// 20 = 7 * 2 + 6
 		EuclideanDivision ed = new EuclideanDivision(20, 7);
-		assertEquals(2, ed.getQuotient());
 		assertEquals(6, ed.getRemainder());
+		assertEquals(2, ed.getQuotient());
 	}
 
 	@Test
 	public void posNegTest() {
 		// 20 = -7 * -2 + 6
 		EuclideanDivision ed = new EuclideanDivision(20, -7);
-		assertEquals(-2, ed.getQuotient());
 		assertEquals(6, ed.getRemainder());
+		assertEquals(-2, ed.getQuotient());
 	}
 
 	@Test
 	public void negPosTest() {
 		// -20 = 7 * -3 + 1
 		EuclideanDivision ed = new EuclideanDivision(-20, 7);
-		System.out.println(ed.toString());
 		assertEquals(1, ed.getRemainder());
 		assertEquals(-3, ed.getQuotient());
 	}
@@ -37,7 +36,6 @@ public class EuclidivTests {
 	public void negNegTest() {
 		// -20 = -7 * 3 + 1
 		EuclideanDivision ed = new EuclideanDivision(-20, -7);
-		System.out.println(ed.toString());
 		assertEquals(1, ed.getRemainder());
 		assertEquals(3, ed.getQuotient());
 	}

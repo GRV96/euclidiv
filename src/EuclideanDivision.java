@@ -60,6 +60,9 @@ public class EuclideanDivision {
 	 */
 	private void performDivision() {
 		remainder = dividend % divisor;
+		if(remainder < 0) {
+			remainder += Math.abs(divisor);
+		}
 		quotient = (dividend - remainder) / divisor;
 	}
 
