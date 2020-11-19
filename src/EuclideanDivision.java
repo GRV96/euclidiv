@@ -15,9 +15,11 @@ public class EuclideanDivision {
 	 * from the dividend and the divisor.
 	 * @param dividend - the divided number
 	 * @param divisor - the number that divides the dividend
+	 * @param allowNegRem - If it is false and the remainder is
+	 * negative, the remainder will be corrected to a positive value.
 	 * @throws IllegalArgumentException if the dividend or the divisor is 0.
 	 */
-	public EuclideanDivision(int dividend, int divisor)
+	public EuclideanDivision(int dividend, int divisor, boolean allowNegRem)
 			throws IllegalArgumentException {
 		if(dividend == 0) {
 			throw new IllegalArgumentException("The dividend may not be 0.");
@@ -28,7 +30,7 @@ public class EuclideanDivision {
 
 		this.dividend = dividend;
 		this.divisor = divisor;
-		performDivision();
+		performDivision(allowNegRem);
 	}
 
 	/**
@@ -56,11 +58,13 @@ public class EuclideanDivision {
 	public int getRemainder() {return remainder;}
 
 	/**
-	 * Calculates the quotient an the remainder.
+	 * Calculates the quotient and the remainder.
+	 * @param allowNegRem - If it is false and the remainder is
+	 * negative, the remainder will be corrected to a positive value.
 	 */
-	private void performDivision() {
+	private void performDivision(boolean allowNegRem) {
 		remainder = dividend % divisor;
-		if(remainder < 0) {
+		if(!allowNegRem && remainder < 0) {
 			remainder += Math.abs(divisor);
 		}
 		quotient = (dividend - remainder) / divisor;
