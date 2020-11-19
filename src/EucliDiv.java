@@ -3,7 +3,7 @@
  * dividend, its divisor, its quotient and its remainder.
  * @author Guyllaume Rousseau
  */
-public class EuclideanDivision {
+public class EucliDiv {
 
 	private int dividend;
 	private int divisor;
@@ -11,15 +11,15 @@ public class EuclideanDivision {
 	private int remainder;
 
 	/**
-	 * Calculates the quotient and the remainder
-	 * from the dividend and the divisor.
+	 * Initializes an instance's quotient and remainder
+	 * according to the given dividend and divisor.
 	 * @param dividend - the divided number
 	 * @param divisor - the number that divides the dividend
 	 * @param allowNegRem - If it is false and the remainder is
 	 * negative, the remainder will be corrected to a positive value.
 	 * @throws IllegalArgumentException if the divisor is 0.
 	 */
-	public EuclideanDivision(int dividend, int divisor, boolean allowNegRem)
+	public EucliDiv(int dividend, int divisor, boolean allowNegRem)
 			throws IllegalArgumentException {
 		if(divisor == 0) {
 			throw new IllegalArgumentException("The divisor may not be 0.");
@@ -55,7 +55,8 @@ public class EuclideanDivision {
 	public int getRemainder() {return remainder;}
 
 	/**
-	 * Calculates the quotient and the remainder.
+	 * Calculates the quotient and the remainder
+	 * from the dividend and the divisor.
 	 * @param allowNegRem - If it is false and the remainder is
 	 * negative, the remainder will be corrected to a positive value.
 	 */

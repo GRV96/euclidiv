@@ -3,20 +3,19 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * Unit tests for class EuclideanDivison
+ * Unit tests for class EucliDiv
  * @author Guyllaume Rousseau
  */
-public class EuclidivTests {
+public class EucliDivTests {
 
 	private static void runDivTest(int dividend, int divisor,
 			boolean allowNegRem, int quotient, int remainder)
 					throws AssertionError, IllegalArgumentException {
-		EuclideanDivision ed =
-				new EuclideanDivision(dividend, divisor, allowNegRem);
+		EucliDiv ed = new EucliDiv(dividend, divisor, allowNegRem);
 		/*
-		 * EuclideanDivision.performDivision calculates the remainder
-		 * first then uses it to calculate the quotient. The remainder
-		 * must therefore be tested first.
+		 * EucliDiv.performDivision calculates the remainder first then uses
+		 * it to calculate the quotient. The remainder must therefore be
+		 * tested first.
 		 */
 		assertEquals(remainder, ed.getRemainder());
 		assertEquals(quotient, ed.getQuotient());
